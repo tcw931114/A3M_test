@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3M | Model Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <div class="brand-lockup">
+                <span class="brand-mark" aria-hidden="true">A3M</span>
+                <div>
+                    <p class="eyebrow">Spatial model viewer</p>
+                    <h1>Model</h1>
+                </div>
+            </div>
+            <div class="topbar-meta">
+                <span class="status-dot"></span>
+                <span id="scene-status">Preparing scene</span>
+            </div>
+        </header>
+
+        <section class="viewer-frame" id="viewer-frame" aria-label="Interactive 3D highway model">
+            <div id="viewer" class="viewer-canvas"></div>
+            <div class="viewer-gradient" aria-hidden="true"></div>
+
+            <div class="scene-title">
+                <span class="section-label">A3M / 001</span>
+                <h2>3D model</h2>
+                <p>Interactive view</p>
+            </div>
+
+            <div class="loading-state" id="loading-state">
+                <span class="loader-ring" aria-hidden="true"></span>
+                <span id="loading-label">Loading model</span>
+            </div>
+
+            <div class="viewer-tools" aria-label="Viewer controls">
+                <button class="icon-button" id="reset-view" type="button" title="Reset camera view" aria-label="Reset camera view">
+                    <span aria-hidden="true">&#8634;</span>
+                </button>
+                <button class="icon-button" id="fullscreen" type="button" title="Toggle fullscreen" aria-label="Toggle fullscreen">
+                    <span aria-hidden="true">&#9974;</span>
+                </button>
+            </div>
+
+            <div class="interaction-hint">
+                <span class="hint-item"><strong>Drag</strong> rotate</span>
+                <span class="hint-divider"></span>
+                <span class="hint-item"><strong>Right drag</strong> pan</span>
+                <span class="hint-divider"></span>
+                <span class="hint-item"><strong>Scroll</strong> zoom</span>
+            </div>
+        </section>
+
+        <footer class="footer-bar">
+            <div class="footer-copy">
+                <span class="live-indicator"></span>
+                <span>GLB asset loaded locally</span>
+            </div>
+            <div class="footer-note">Use the scene as a spatial canvas</div>
+        </footer>
+    </main>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
